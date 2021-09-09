@@ -1,6 +1,7 @@
 package com.github.hotire.spring.hexagonal.architecture.ex.account
 
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
@@ -11,9 +12,9 @@ value class AccountId(val value: Long)
 @JvmInline
 value class Money(val value: Int)
 
-class Account(
-    val id: AccountId,
-    val balance: Money
+data class Account(
+    var id: AccountId,
+    var balance: Money
 )
 
 interface SendMoney {
@@ -27,10 +28,26 @@ interface SendMoney {
 }
 
 @Service
-class SendMoneyService(private val loadAccountPort: LoadAccountPort) : SendMoney {
+class SendMoneyService(
+    private val loadAccountPort: LoadAccountPort,
+    private val updateAccountPort: UpdateAccountPort
+) : SendMoney {
+
+    @Transactional
     override fun sendMoney(command: SendMoney.SendMoneyCommand): Boolean {
         val sourceAccount = loadAccountPort.loadAccount(command.sourceAccountId)
         val targetAccount = loadAccountPort.loadAccount(command.targetAccountId)
+
+        if (sourceAccount.balance.value < command.money.value) {
+            return false
+        }
+
+        sourceAccount.balance = Money(sourceAccount.balance.value - command.money.value)
+        targetAccount.balance = Money(targetAccount.balance.value + command.money.value)
+
+        updateAccountPort.updateAccount(sourceAccount)
+        updateAccountPort.updateAccount(targetAccount)
+
         return true
     }
 }
