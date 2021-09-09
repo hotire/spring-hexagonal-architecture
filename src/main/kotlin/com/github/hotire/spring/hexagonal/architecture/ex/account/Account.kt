@@ -39,6 +39,10 @@ interface LoadAccountPort {
     fun loadAccount(accountId: AccountId): Account
 }
 
+interface UpdateAccountPort {
+    fun updateAccount(account: Account)
+}
+
 @RequestMapping("/money")
 @RestController
 class SendMoneyController(val sendMoney: SendMoney) {
