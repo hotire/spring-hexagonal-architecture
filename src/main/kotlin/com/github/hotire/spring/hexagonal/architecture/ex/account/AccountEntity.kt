@@ -15,9 +15,9 @@ class AccountEntity(
 interface AccountRepository : JpaRepository<AccountEntity, Long>
 
 @Service
-class AccountPersistenceService(private val accountRepository: AccountRepository) {
+class AccountPersistenceAdapter(private val accountRepository: AccountRepository) : LoadAccountPort {
 
-    fun findById(accountId: AccountId) : Account {
+    override fun loadAccount(accountId: AccountId): Account {
         val accountEntity = accountRepository.findById(accountId.value).orElseThrow()
         return Account(AccountId(accountEntity.id), Money(accountEntity.money))
     }

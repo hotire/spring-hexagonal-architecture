@@ -19,7 +19,7 @@ class Account(
 interface SendMoney {
     fun sendMoney(command: SendMoneyCommand): Boolean
 
-    class SendMoneyCommand(
+    data class SendMoneyCommand(
         val sourceAccountId: AccountId,
         val targetAccountId: AccountId,
         val money: Money
@@ -27,11 +27,16 @@ interface SendMoney {
 }
 
 @Service
-class SendMoneyService(private val accountPersistenceService: AccountPersistenceService) : SendMoney {
+class SendMoneyService(private val loadAccountPort: LoadAccountPort) : SendMoney {
     override fun sendMoney(command: SendMoney.SendMoneyCommand): Boolean {
-        val account = accountPersistenceService.findById(command.sourceAccountId)
+        val sourceAccount = loadAccountPort.loadAccount(command.sourceAccountId)
+        val targetAccount = loadAccountPort.loadAccount(command.targetAccountId)
         return true
     }
+}
+
+interface LoadAccountPort {
+    fun loadAccount(accountId: AccountId): Account
 }
 
 @RequestMapping("/money")
@@ -42,7 +47,14 @@ class SendMoneyController(val sendMoney: SendMoney) {
     fun sendMoney(
         @RequestParam("sourceAccountId") sourceAccountId: Long,
         @RequestParam("targetAccountId") targetAccountId: Long,
-        @RequestParam("amount") amount: Int) {
-        sendMoney.sendMoney(SendMoney.SendMoneyCommand(AccountId(sourceAccountId), AccountId(targetAccountId), Money(amount)))
+        @RequestParam("amount") amount: Int
+    ) {
+        sendMoney.sendMoney(
+            SendMoney.SendMoneyCommand(
+                AccountId(sourceAccountId),
+                AccountId(targetAccountId),
+                Money(amount)
+            )
+        )
     }
 }
