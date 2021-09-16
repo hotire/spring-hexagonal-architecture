@@ -1,14 +1,13 @@
 package com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.adapter
 
-import com.github.hotire.spring.hexagonal.architecture.ex.account.Account
-import com.github.hotire.spring.hexagonal.architecture.ex.account.AccountId
-import com.github.hotire.spring.hexagonal.architecture.ex.account.LoadAccountPort
-import com.github.hotire.spring.hexagonal.architecture.ex.account.Money
-import com.github.hotire.spring.hexagonal.architecture.ex.account.UpdateAccountPort
 import com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.AccountEntity
 import com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.repository.AccountRepository
+import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Account
+import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.AccountId
+import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
+import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.LoadAccountPort
+import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.UpdateAccountPort
 import org.springframework.stereotype.Service
-
 
 @Service
 class AccountPersistenceAdapter(private val accountRepository: AccountRepository) :
@@ -24,4 +23,3 @@ class AccountPersistenceAdapter(private val accountRepository: AccountRepository
         accountRepository.save(AccountEntity(account.id.value, account.balance.value))
     }
 }
-
