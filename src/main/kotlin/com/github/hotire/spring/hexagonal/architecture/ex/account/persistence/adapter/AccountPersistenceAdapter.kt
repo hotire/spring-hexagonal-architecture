@@ -1,13 +1,13 @@
 package com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.adapter
 
 import com.github.hotire.spring.hexagonal.architecture.ex.account.CustomPropertyChangeListener
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.Account
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.AccountId
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.LoadAccountPort
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.Money
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.UpdateAccountPort
 import com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.AccountEntity
 import com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.repository.AccountRepository
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Account
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.AccountId
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.LoadAccountPort
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.UpdateAccountPort
 import org.springframework.stereotype.Service
 import java.beans.PropertyChangeSupport
 

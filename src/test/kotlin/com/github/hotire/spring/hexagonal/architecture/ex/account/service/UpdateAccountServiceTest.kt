@@ -1,9 +1,10 @@
 package com.github.hotire.spring.hexagonal.architecture.ex.account.service
 
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Account
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.AccountId
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.LoadAccountPort
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.Account
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.AccountId
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.LoadAccountPort
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.Money
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.UpdateAccountService
 import org.junit.jupiter.api.Test
 import org.mockito.BDDMockito.given
 import org.mockito.Mockito

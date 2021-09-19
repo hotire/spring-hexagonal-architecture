@@ -1,8 +1,4 @@
-package com.github.hotire.spring.hexagonal.architecture.ex.account.service.port
-
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Account
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.AccountId
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
+package com.github.hotire.spring.hexagonal.architecture.ex.account.domain
 
 /**
  * output

@@ -1,8 +1,8 @@
 package com.github.hotire.spring.hexagonal.architecture.ex.account.web
 
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.AccountId
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.SendMoneyUseCase
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.AccountId
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.Money
+import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.SendMoneyUseCase
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam

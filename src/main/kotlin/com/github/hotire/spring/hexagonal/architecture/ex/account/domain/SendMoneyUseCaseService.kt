@@ -1,9 +1,5 @@
-package com.github.hotire.spring.hexagonal.architecture.ex.account.service
+package com.github.hotire.spring.hexagonal.architecture.ex.account.domain
 
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.LoadAccountPort
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.SendMoneyUseCase
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.UpdateAccountPort
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 

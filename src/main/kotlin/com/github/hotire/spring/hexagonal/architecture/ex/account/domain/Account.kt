@@ -1,4 +1,4 @@
-package com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain
+package com.github.hotire.spring.hexagonal.architecture.ex.account.domain
 
 @JvmInline
 value class AccountId(val value: Long)

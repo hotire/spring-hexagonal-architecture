@@ -1,9 +1,6 @@
-package com.github.hotire.spring.hexagonal.architecture.ex.account.service
+package com.github.hotire.spring.hexagonal.architecture.ex.account.domain
 
 import com.github.hotire.spring.hexagonal.architecture.ex.account.CustomPropertyChangeListener
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Account
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
-import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.LoadAccountPort
 import java.beans.PropertyChangeSupport
 
 class UpdateAccountService(private val loadAccountPort: LoadAccountPort) {
