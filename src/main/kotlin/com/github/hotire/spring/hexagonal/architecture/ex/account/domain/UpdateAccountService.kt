@@ -1,6 +1,6 @@
 package com.github.hotire.spring.hexagonal.architecture.ex.account.domain
 
-import com.github.hotire.spring.hexagonal.architecture.ex.account.CustomPropertyChangeListener
+import com.github.hotire.spring.hexagonal.architecture.validation.CustomPropertyChangeListener
 import java.beans.PropertyChangeSupport
 
 class UpdateAccountService(private val loadAccountPort: LoadAccountPort) {
@@ -23,6 +23,7 @@ class UpdateAccountService(private val loadAccountPort: LoadAccountPort) {
                 get() = "balance"
             override val propertyProvider: Account.() -> Money
                 get() = { this.balance }
+
             override fun propertyChange(oldValue: Money?, newValue: Money?) {
                 println(oldValue)
                 println(newValue)

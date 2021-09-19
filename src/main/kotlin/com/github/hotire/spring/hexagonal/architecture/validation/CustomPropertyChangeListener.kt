@@ -1,4 +1,4 @@
-package com.github.hotire.spring.hexagonal.architecture.ex.account
+package com.github.hotire.spring.hexagonal.architecture.validation
 
 import java.beans.PropertyChangeEvent
 import java.beans.PropertyChangeListener
