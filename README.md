@@ -19,6 +19,15 @@ behavior이 상태에 가까울수록, 유지 보수에 쉬운 코드를 작성�
 Having a single responsibility lets us evolve our domain objects without having to take external dependencies in regard
 
 
+## Use Cases
+
+A use case in this sense is a class that handles everything around, well, a certain use case
+
+비즈니스 로직을 처리하기 위한 클래이다. 
+
+The code contains all the business rule validations and logic that are specific 
+
+
 ## Input and Output Ports
 
 The domain objects and use cases are within the hexagon, i.e. within the core of the application.
