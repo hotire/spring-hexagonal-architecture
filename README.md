@@ -23,7 +23,7 @@ Having a single responsibility lets us evolve our domain objects without having 
 
 A use case in this sense is a class that handles everything around, well, a certain use case
 
-비즈니스 로직을 처리하기 위한 클래이다. 
+비즈니스 로직(특정 사례)을 처리하기 위한 클래스이다. 도메인 서비스 클래스라고 볼수 있다. 
 
 The code contains all the business rule validations and logic that are specific 
 
@@ -38,6 +38,25 @@ The domain objects and use cases are within the hexagon, i.e. within the core of
 - Input : 외부 구성 요소에서 호출되는데, use case에 의해 구현된다. 보통 input adapter or “driving” adapter 라고 부른다. 
 
 - Output : use-case에 의해 호출되는데, 외부 구성에 의해 구현된다. the “D” in SOLID로 인터페이스를 통해  output adapter와 use cases 종속성을 반전시킨다. 
+
+
+
+## Adapters
+
+The adapters form the outer layer of the hexagonal architecture. 
+
+Input adapters or “driving” adapters 는 input ports를 호출한다. 
+
+ex) web, kafka...가 된다. 
+
+Output adapters or “driven” adapters는 use cases에 의해 호출된다. 
+
+ex) database, redis..
+
+출력 어댑터는 출력 포트 인터페이스 세트를 구현합니다.
+
+
+application의 layer를 쉽게 변경할수 있게 도와주는 역할이 Adapters 인 것 이다. 
 
 
 
