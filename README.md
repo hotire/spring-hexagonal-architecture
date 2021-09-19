@@ -1,6 +1,12 @@
 # spring-hexagonal-architecture
 
-육각형 설계(Hexagonal Architecture)로 더 잘 알려져 있는 포트와 어댑터 설계(Ports and Adapters Architecture)는, 인터페이스나 기반 요소(infrastructure)의 변경에 영향을 받지 않는 핵심 코드를 만들고 이를 견고하게 관리하는 것이 목표입니다
+육각형 설계(Hexagonal Architecture)로 더 잘 알려져 있는 포트와 어댑터 설계(Ports and Adapters Architecture)는, 
+
+인터페이스나 기반 요소(infrastructure)의 변경에 영향을 받지 않는 핵심 코드를 만들고 이를 견고하게 관리하는 것이 목표입니다
+
+
+외부의 dependencies의 변경에 영향을 받지 않고 비즈니스, 도메인에 집중하는 핵심 코드를 만들고 관리하기 쉬운 어플리케이션 설계 방법입니다. 
+
 
 
 ## Domain Objects

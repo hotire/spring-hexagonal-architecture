@@ -19,6 +19,7 @@ repositories {
 }
 
 extra["springCloudVersion"] = "2020.0.3"
+val mapstructVersion = "1.4.2.Final"
 
 dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
@@ -31,6 +32,11 @@ dependencies {
     runtimeOnly("com.h2database:h2")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.springframework.kafka:spring-kafka-test")
+
+    // Mapstruct
+    implementation("org.mapstruct:mapstruct:$mapstructVersion")
+    kapt("org.mapstruct:mapstruct-processor:$mapstructVersion")
+    kaptTest("org.mapstruct:mapstruct-processor:$mapstructVersion")
 }
 
 dependencyManagement {
