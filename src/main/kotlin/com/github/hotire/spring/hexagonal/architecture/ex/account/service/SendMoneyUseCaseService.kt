@@ -2,19 +2,19 @@ package com.github.hotire.spring.hexagonal.architecture.ex.account.service
 
 import com.github.hotire.spring.hexagonal.architecture.ex.account.service.domain.Money
 import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.LoadAccountPort
+import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.SendMoneyUseCase
 import com.github.hotire.spring.hexagonal.architecture.ex.account.service.port.UpdateAccountPort
-import com.github.hotire.spring.hexagonal.architecture.ex.account.web.SendMoney
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
 @Service
-class SendMoneyService(
+class SendMoneyUseCaseService(
     private val loadAccountPort: LoadAccountPort,
     private val updateAccountPort: UpdateAccountPort
-) : SendMoney {
+) : SendMoneyUseCase {
 
     @Transactional
-    override fun sendMoney(command: SendMoney.SendMoneyCommand): Boolean {
+    override fun sendMoney(command: SendMoneyUseCase.SendMoneyCommand): Boolean {
         val sourceAccount = loadAccountPort.loadAccount(command.sourceAccountId)
         val targetAccount = loadAccountPort.loadAccount(command.targetAccountId)
 
