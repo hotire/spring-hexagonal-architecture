@@ -7,9 +7,9 @@ import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.Money
 import com.github.hotire.spring.hexagonal.architecture.ex.account.domain.UpdateAccountPort
 import com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.AccountEntity
 import com.github.hotire.spring.hexagonal.architecture.ex.account.persistence.repository.AccountRepository
-import org.springframework.stereotype.Service
+import org.springframework.stereotype.Repository
 
-@Service
+@Repository
 class AccountPersistenceAdapter(private val accountRepository: AccountRepository) :
     LoadAccountPort,
     UpdateAccountPort {
