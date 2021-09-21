@@ -75,6 +75,10 @@ application의 layer를 쉽게 변경할수 있게 도와주는 역할이 Adapte
 ![hexagonal-adapter](/doc/img/2.png)
 
 
+### Getting Started 
+
+- https://blog.naver.com/gngh0101/222511422197
+
 
 
 ### References
