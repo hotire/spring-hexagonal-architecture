@@ -16,7 +16,7 @@ class AccountPersistenceAdapter(private val accountRepository: AccountRepository
 
     override fun loadAccount(accountId: AccountId): Account {
         val accountEntity = accountRepository.findById(accountId.value).orElseThrow()
-        return Account(AccountId(accountEntity.id), Money(accountEntity.money))
+        return Account(AccountId(accountEntity.id), Money(accountEntity.balance))
     }
 
     override fun updateAccount(account: Account) {

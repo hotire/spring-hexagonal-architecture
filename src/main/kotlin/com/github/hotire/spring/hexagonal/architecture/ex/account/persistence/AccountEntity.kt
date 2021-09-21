@@ -7,5 +7,5 @@ import javax.persistence.Id
 class AccountEntity(
     @Id
     var id: Long,
-    var money: Int
+    var balance: Int
 )
