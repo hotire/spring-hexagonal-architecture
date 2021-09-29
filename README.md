@@ -84,5 +84,6 @@ application의 layer를 쉽게 변경할수 있게 도와주는 역할이 Adapte
 ### References
 
 - https://reflectoring.io/spring-hexagonal/
+- https://www.baeldung.com/hexagonal-architecture-ddd-spring
 - https://alistair.cockburn.us/hexagonal-architecture/
 - https://engineering.linecorp.com/ko/blog/port-and-adapter-architecture/
